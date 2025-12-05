@@ -3,9 +3,19 @@ from flask_cors import CORS
 import pickle
 import numpy as np
 import os
+from pathlib import Path
 
 app = Flask(__name__)
 CORS(app)
+
+# Root route for health checks
+@app.route('/')
+def health_check():
+    return jsonify({
+        'status': 'healthy',
+        'message': 'Poverty Prediction API is running',
+        'model_loaded': model is not None
+    }), 200
 
 # Load the model
 try:
@@ -85,4 +95,5 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port, debug=os.environ.get('FLASK_DEBUG', 'false').lower() == 'true')
