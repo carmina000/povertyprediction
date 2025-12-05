@@ -1,1 +1,1 @@
-web: gunicorn app:app 
+web: gunicorn poverty-backend.app:app
