@@ -45,11 +45,11 @@ def predict():
         print("\nReceived data:", data)
         
         # Extract and convert features
-        features = np.array([[
+        features = np.array([
             float(data['population']),           # Population
             float(data['average_income']),       # Average_Income_PHP
             float(data['unemployment_rate'])     # Unemployment_Rate
-        ]])
+        ]).reshape(1, -1)
 
         # Debug prints
         print("\nInput features:", features)
