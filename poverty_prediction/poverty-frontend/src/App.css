@@ -1,0 +1,177 @@
+:root {
+  --primary-blue: #3498db;
+  --dark-text: #2c3e50;
+  --white: #ffffff;
+
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  margin: 0;
+  padding: 0;
+  color: var(--dark-text);
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('assets/churvabels.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+
+  
+}
+
+/* Header */
+.header h1 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+  font-size: 2.5rem;
+  background-color: white;
+  border-radius: 8px;
+}
+.header p {
+  background-color: white;
+  color: #7f8c8d;
+  font-size: 1.2rem;
+  margin-top: 0;
+  border-radius: 8px;
+}
+
+/* Stats Cards */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--white);
+  padding: 20px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  min-width: 200px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #2c3e50;
+}
+
+/* Prediction Box */
+.prediction-box {
+  width: 100%;
+  background: var(--white);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.prediction-box h3 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: #34495e;
+}
+
+.input-group input, .input-group select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.predict-btn {
+  background-color: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+.predict-btn:hover {
+  background-color: #2980b9;
+}
+
+.predict-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Results */
+.result-area {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+}
+
+.result-area h4 {
+  font-size: 1.2rem;
+  margin: 0 0 10px 0;
+}
+
+.risk-highest {
+  color: #e74c3c; /* Red */
+  font-weight: bold;
+}
+
+.risk-high {
+  color: #f39c12; /* Orange */
+  font-weight: bold;
+}
+
+.risk-moderate {
+  color: #f1c40f; /* Yellow */
+  font-weight: bold;
+}
+
+.risk-low {
+  color: #27ae60; /* Green */
+  font-weight: bold;
+}
