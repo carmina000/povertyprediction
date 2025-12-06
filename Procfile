@@ -1,1 +1,1 @@
-web: gunicorn poverty_prediction.poverty-backend.app:app
+gunicorn poverty_backend.app:app --bind 0.0.0.0:$PORT
