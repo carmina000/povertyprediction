@@ -3,6 +3,7 @@ from flask_cors import CORS
 import pickle
 import numpy as np
 import os
+from flask import Flask
 
 app = Flask(__name__)
 CORS(app)
