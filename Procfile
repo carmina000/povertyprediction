@@ -1,1 +1,1 @@
-web: gunicorn poverty-prediction.app:app
+web: python check_model.py
