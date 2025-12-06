@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
-from fastapi import FastAPI
+from flask_cors import CORS
 import pickle
 import numpy as np
 import os
 
-app = FastAPI()
+app = Flask(__name__)
+CORS(app)
 
 # Load the model
 try:
@@ -31,10 +32,6 @@ try:
 except Exception as e:
     print(f"❌ Error loading model: {str(e)}")
     model = None
-
-@app.route('/')
-def home():
-    return "Poverty Prediction API is running!"
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -88,4 +85,5 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    port = int(os.environ.get('PORT', 5001))
+    app.run(host='0.0.0.0', port=port)
