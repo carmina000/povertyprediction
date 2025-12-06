@@ -1,1 +1,1 @@
-web: gunicorn poverty-prediction.app:app
+web: gunicorn poverty-backend.app:app
