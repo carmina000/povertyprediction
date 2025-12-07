@@ -1,1 +1,1 @@
-web: gunicorn poverty_backend.app:app --bind 0.0.0.0:$PORT
+web: waitress-serve --port=$PORT poverty_prediction.poverty_backend.app:app

@@ -3,4 +3,5 @@ setup.py
 poverty_prediction.egg-info/PKG-INFO
 poverty_prediction.egg-info/SOURCES.txt
 poverty_prediction.egg-info/dependency_links.txt
+poverty_prediction.egg-info/requires.txt
 poverty_prediction.egg-info/top_level.txt
