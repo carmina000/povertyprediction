@@ -3,22 +3,11 @@ from flask_cors import CORS
 import pickle
 import numpy as np
 import os
-from flask import Flask
-from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-
-# Your routes here
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=port)
-    
-from flask import Flask
-app = Flask(__name__)
-
 # Load the model
+
 try:
     model_path = os.path.join(os.path.dirname(__file__), 'random_forest_model.pkl')
     with open(model_path, 'rb') as f:
