@@ -83,7 +83,9 @@ def predict():
         print(f"Error during prediction: {e}")
         return jsonify({'error': str(e)}), 400
 
+from waitress import serve
+import os
+
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Convert to integer
-    from waitress import serve
+    port = int(os.environ.get("PORT", 5000))  # Convert PORT to integer
     serve(app, host="0.0.0.0", port=port)
