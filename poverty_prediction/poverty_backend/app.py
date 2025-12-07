@@ -1,13 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask
+<<<<<<< HEAD
+=======
 from flask_cors import CORS
+import os
+from waitress import serve
 import pickle
 import numpy as np
-import os
-from flask import Flask
+>>>>>>> 449173d24c590b6356848c2610765e44e55d6188
 
 app = Flask(__name__)
 CORS(app)
 
+<<<<<<< HEAD
 # Your routes here
 
 if __name__ == "__main__":
@@ -15,6 +19,8 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port)
 
 # Load the model
+=======
+>>>>>>> 449173d24c590b6356848c2610765e44e55d6188
 try:
     model_path = os.path.join(os.path.dirname(__file__), 'random_forest_model.pkl')
     with open(model_path, 'rb') as f:
@@ -91,6 +97,11 @@ def predict():
         print(f"Error during prediction: {e}")
         return jsonify({'error': str(e)}), 400
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5001))
-    app.run(host='0.0.0.0', port=port)
+
+from waitress import serve
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # convert to int
+    serve(app, host="0.0.0.0", port=port)
+

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 web: gunicorn poverty_backend.api.index:app
+=======
+web: python poverty_prediction/poverty_backend/app.py
+>>>>>>> 449173d24c590b6356848c2610765e44e55d6188
