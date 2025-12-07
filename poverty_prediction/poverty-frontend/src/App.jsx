@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { getPrediction } from "./api";
 import React, { useState } from 'react';
 import './App.css';
 import { barangays } from './data/barangays';
