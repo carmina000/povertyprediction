@@ -2,7 +2,9 @@ services:
   - type: web
     name: poverty-prediction
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install -e .
+      pip install -r requirements.txt
     startCommand: gunicorn wsgi:application
     envVars:
       - key: PYTHON_VERSION
