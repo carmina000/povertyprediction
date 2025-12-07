@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT poverty_prediction.poverty_backend.app:app
+web: python poverty_prediction/poverty_backend/app.py
