@@ -88,5 +88,5 @@ from waitress import serve
 import os
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # convert PORT to integer
+    port = int(os.environ.get("PORT", 5000))  # ✅ Convert PORT to integer
     serve(app, host="0.0.0.0", port=port)
