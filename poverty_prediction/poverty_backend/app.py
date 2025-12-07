@@ -1,8 +1,9 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 from flask_cors import CORS
+import os
+from waitress import serve
 import pickle
 import numpy as np
-import os
 
 app = Flask(__name__)
 CORS(app)
@@ -87,5 +88,5 @@ from waitress import serve
 import os
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Convert PORT to integer
+    port = int(os.environ.get("PORT", 5000))  # convert PORT to integer
     serve(app, host="0.0.0.0", port=port)
