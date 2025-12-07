@@ -6,7 +6,6 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-# Load the model
 
 try:
     model_path = os.path.join(os.path.dirname(__file__), 'random_forest_model.pkl')
@@ -84,6 +83,3 @@ def predict():
         print(f"Error during prediction: {e}")
         return jsonify({'error': str(e)}), 400
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5001))
-    app.run(host='0.0.0.0', port=port)
