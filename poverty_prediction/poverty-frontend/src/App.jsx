@@ -17,17 +17,18 @@ function App() {
   setLoading(true);
   
   try {
-    const response = await fetch('http://localhost:5001/predict', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        population: parseInt(population),
-        average_income: parseFloat(income),
-        unemployment_rate: parseFloat(unemployment)
-      })
-    });
+    const response = await fetch('https://poverty-backend-production.up.railway.app/predict', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    population: parseInt(population),
+    average_income: parseFloat(income),
+    unemployment_rate: parseFloat(unemployment)
+  })
+});
+
     
     const data = await response.json();
     
